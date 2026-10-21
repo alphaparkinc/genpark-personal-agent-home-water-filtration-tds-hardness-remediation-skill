@@ -1,0 +1,54 @@
+{
+  "name": "genpark-personal-agent-home-water-filtration-tds-hardness-remediation-skill",
+  "version": "1.0.0",
+  "title": "Home Water Quality TDS & Heavy Metal Remediation Skill",
+  "description": "Municipal tap water water-quality report parsing, TDS ppm audit, reverse osmosis membrane lifecycle monitoring, and mineral remineralizer. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "personal-agent",
+  "topics": [
+    "water-quality",
+    "tds-filtration",
+    "reverse-osmosis",
+    "clean-water",
+    "personal-agent",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "audit_drinking_water_tds",
+      "description": "Evaluate Total Dissolved Solids (TDS ppm) and membrane rejection efficiency.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "tap_feed_tds_ppm": {
+            "type": "number"
+          },
+          "filtered_product_tds_ppm": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "tap_feed_tds_ppm",
+          "filtered_product_tds_ppm"
+        ]
+      }
+    },
+    {
+      "name": "prescribe_remineralization_matrix",
+      "description": "Formulate remineralization electrolyte profile (calcium, magnesium, bicarbonate) for RO water.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_ph": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "target_ph"
+        ]
+      }
+    }
+  ]
+}
